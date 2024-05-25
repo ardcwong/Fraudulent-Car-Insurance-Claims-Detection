@@ -29,12 +29,10 @@ st.write("For re-engagement, we could also develop targeted communication campai
 st.title("Supervised Learning: Linear Regression")
 st.write("The purpose of creating this linear regression model was to determine the relationship between total spending and the top three spending categories: grocery_pos, kids_pets, and gas_transport. This model can also be used to create an alert system when there is a deviation between predicted and actual values.")
 st.write("To achieve this, we used transaction data from January 2020 to November 2021. We grouped the total spending and total transactions for these categories from January to December 2020 to train the model. The model then predicted the total amount spent from January to November 2021.")
-st.text("Note: The limitation of this model is that it was trained using only one")
-st.text("year of data.")
+st.write("Note: The limitation of this model is that it was trained using only one year of data.")
 st.image("streamlit_demo/images/reg.png")
 st.write("Our model achieved an R-squared of 0.47, indicating a moderate positive correlation. This means that fluctuations in spending within the top three categories (grocery_pos, kids_pets, gas_transport) are likely to affect the overall spending and, consequently, the company's revenue.")
-st.text("For instance, a decrease in spending or transaction volume in these categories")
-st.text("suggests a potential drop in total revenue, and vice versa.")
+st.write("For instance, a decrease in spending or transaction volume in these categories suggests a potential drop in total revenue, and vice versa.")
 st.write("This insight can help us develop an alert system to monitor trends in these critical categories. If a decreasing trend is detected, prompt action can be taken to mitigate potential revenue losses.")
 
 

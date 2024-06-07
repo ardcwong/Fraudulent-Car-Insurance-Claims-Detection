@@ -51,6 +51,7 @@ else:
     st.write("Please upload a CSV file.")
 
 X_holdout_existing = pd.read_csv('holdout.csv', index_col=0)
+
 holdout_transactions_existing = X_holdout_existing.index.to_list()
 
 
@@ -59,7 +60,7 @@ holdout_transactions_existing = X_holdout_existing.index.to_list()
 choice = st.selectbox(
     "Select Claim Reference Number:",
     options = holdout_transactions_existing)
-
+st.write(X_holdout_existing.iloc[choice])
 
 def predict_if_fraud_existing(transaction_id):
     transaction = X_holdout_existing.loc[transaction_id].values.reshape(1, -1)

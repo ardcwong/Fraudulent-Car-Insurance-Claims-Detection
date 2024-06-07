@@ -5,6 +5,38 @@ import pandas as pd
 # model deployment
 #from flask import Flask
 import streamlit as st
+import streamlit as st
+
+from imblearn.over_sampling import BorderlineSMOTE, SVMSMOTE, RandomOverSampler
+from imblearn.over_sampling import BorderlineSMOTE, SVMSMOTE, RandomOverSampler
+from sklearn.model_selection import StratifiedKFold
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.ensemble import AdaBoostClassifier
+
+from imblearn.under_sampling import (TomekLinks, NearMiss, RandomUnderSampler, ClusterCentroids,
+                                     EditedNearestNeighbours, AllKNN, NeighbourhoodCleaningRule)
+
+# modelling
+from sklearn.preprocessing import MinMaxScaler,StandardScaler
+
+from sklearn.model_selection import (train_test_split, GridSearchCV,
+                                     StratifiedKFold)
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.svm import SVC
+from sklearn.linear_model import LogisticRegression
+from sklearn.naive_bayes import GaussianNB
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import (RandomForestClassifier,
+                              GradientBoostingClassifier,
+                              AdaBoostClassifier,
+                              ExtraTreesClassifier,
+                              )
+from catboost import CatBoostClassifier
+
+from sklearn.discriminant_analysis import LinearDiscriminantAnalysis, QuadraticDiscriminantAnalysis
+
+from sklearn.model_selection import cross_validate
+from sklearn.metrics import (ConfusionMatrixDisplay,  precision_score, recall_score, f1_score)
 
 # read model and holdout data
 model = pickle.load(open('lr.pkl', 'rb'))

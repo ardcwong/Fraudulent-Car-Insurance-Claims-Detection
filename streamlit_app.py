@@ -40,3 +40,6 @@ if st.button("Predict"):
         st.error('This transaction may be FRAUDULENT', icon="🚨")
     elif output == 'Not Fraud':
         st.success('This transaction is approved!', icon="✅")
+
+
+

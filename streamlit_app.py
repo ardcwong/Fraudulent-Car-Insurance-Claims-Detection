@@ -11,10 +11,10 @@ model = pickle.load(open('lr.pkl', 'rb'))
 X_holdout = pd.read_csv('holdout.csv', index_col=0)
 holdout_transactions = X_holdout.index.to_list()
 
-st.title("Transaction Fraud Detection")
+st.title("Car Insurance Fraud Detection")
 html_temp = """
 <div style="background:#025246 ;padding:10px">
-<h2 style="color:white;text-align:center;"> Credit Card Fraud Detection ML App </h2>
+<h2 style="color:white;text-align:center;"> Car Insurance Fraud Detection ML App </h2>
 </div>
 """
 st.markdown(html_temp, unsafe_allow_html = True)

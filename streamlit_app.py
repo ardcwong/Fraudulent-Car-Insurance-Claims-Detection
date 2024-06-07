@@ -50,8 +50,37 @@ else:
     # Inform the user to upload a file
     st.write("Please upload a CSV file.")
 
+X_holdout_existing = pd.read_csv('holdout.csv', index_col=0)
+holdout_transactions_existing = X_holdout_existing.index.to_list()
+
+st.title("Transaction Fraud Detection")
+html_temp = """
+<div style="background:#025246 ;padding:10px">
+<h2 style="color:white;text-align:center;"> Credit Card Fraud Detection ML App </h2>
+</div>
+"""
+st.markdown(html_temp, unsafe_allow_html = True)
+
+#adding a selectbox
+choice = st.selectbox(
+    "Select Transaction Number:",
+    options = holdout_transactions_existing)
 
 
+def predict_if_fraud_existing(transaction_id):
+    transaction = X_holdout.loc[transaction_id].values.reshape(1, -1)
+    prediction_num = model.predict(transaction)[0]
+    pred_map = {1: 'Fraud', 0: 'Not Fraud'}
+    prediction = pred_map[prediction_num]
+    return prediction
+
+if st.button("Predict"):
+    output_existing = predict_if_fraud_existing(choice)
+
+    if output_existing == 'Fraud':
+        st.error('This transaction may be FRAUDULENT', icon="🚨")
+    elif output_existing == 'Not Fraud':
+        st.success('This transaction is approved!', icon="✅")
 
 
 

@@ -39,7 +39,7 @@ if X_holdout is not None:
         pred_map = {1: 'Fraud', 0: 'Not Fraud'}
         prediction = pred_map[prediction_num]
         return prediction
-    if st.button("Predict"):
+    if st.button("Predict Uploaded Record"):
         output = predict_if_fraud(choice)
     
         if output == 'Fraud':

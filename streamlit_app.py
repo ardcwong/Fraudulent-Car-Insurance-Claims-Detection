@@ -68,7 +68,7 @@ choice = st.selectbox(
 
 
 def predict_if_fraud_existing(transaction_id):
-    transaction = X_holdout.loc[transaction_id].values.reshape(1, -1)
+    transaction = X_holdout_existing.loc[transaction_id].values.reshape(1, -1)
     prediction_num = model.predict(transaction)[0]
     pred_map = {1: 'Fraud', 0: 'Not Fraud'}
     prediction = pred_map[prediction_num]

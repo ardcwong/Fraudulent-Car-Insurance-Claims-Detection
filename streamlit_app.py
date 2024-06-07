@@ -21,7 +21,7 @@ st.markdown(html_temp, unsafe_allow_html = True)
 
 #adding a selectbox
 choice = st.selectbox(
-    "Select Transaction Number:",
+    "Select Claim Reference Number:",
     options = holdout_transactions)
 
 

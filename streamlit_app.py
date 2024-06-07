@@ -11,7 +11,15 @@ import streamlit as st
 model = pickle.load(open('lr.pkl', 'rb'))
 #X_holdout = pd.read_csv('holdout.csv', index_col=0)
 X_holdout = st.file_uploader("Upload a CSV file", type=["csv"])
+if uploaded_file is not None:
+    # Read CSV data into DataFrame
+    X_holdout = pd.read_csv(uploaded_file, index_col=0)  # Assuming the index is in the first column
 
+    # Display DataFrame
+    st.write(df)
+else:
+    # Inform the user to upload a file
+    st.write("Please upload a CSV file.")
 holdout_transactions = X_holdout.index.to_list()
 
 st.title("Car Insurance Fraud Detection")

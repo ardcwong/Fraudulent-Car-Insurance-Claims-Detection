@@ -9,7 +9,9 @@ import streamlit as st
 
 # read model and holdout data
 model = pickle.load(open('lr.pkl', 'rb'))
-X_holdout = pd.read_csv('holdout.csv', index_col=0)
+#X_holdout = pd.read_csv('holdout.csv', index_col=0)
+X_holdout = st.file_uploader("Upload a CSV file", type=["csv"])
+
 holdout_transactions = X_holdout.index.to_list()
 
 st.title("Car Insurance Fraud Detection")

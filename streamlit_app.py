@@ -3,7 +3,7 @@ import pickle
 import pandas as pd
 
 # model deployment
-from flask import Flask
+#from flask import Flask
 import streamlit as st
 
 # read model and holdout data

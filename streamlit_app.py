@@ -17,11 +17,8 @@ if X_holdout is not None:
 
     # Display DataFrame
     st.write(X_holdout)
-else:
-    # Inform the user to upload a file
-    st.write("Please upload a CSV file.")
-    
-holdout_transactions = X_holdout.index.to_list()
+
+            holdout_transactions = X_holdout.index.to_list()
 
 st.title("Car Insurance Fraud Detection")
 html_temp = """
@@ -51,6 +48,12 @@ if st.button("Predict"):
         st.error('This transaction may be FRAUDULENT', icon="🚨")
     elif output == 'Not Fraud':
         st.success('This transaction is approved!', icon="✅")
+
+else:
+    # Inform the user to upload a file
+    st.write("Please upload a CSV file.")
+    
+
 
 
 

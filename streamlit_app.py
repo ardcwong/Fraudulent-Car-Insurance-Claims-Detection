@@ -73,7 +73,7 @@ def predict_if_fraud_existing(transaction_id):
     return prediction
 
 if st.button("Predict"):
-    output_existing = predict_if_fraud_existing(choice)
+    output_existing = predict_if_fraud_existing(choice_existing)
 
     if output_existing == 'Fraud':
         st.error('This transaction may be FRAUDULENT', icon="🚨")

@@ -31,7 +31,7 @@ if X_holdout is not None:
 
     #adding a selectbox
     choice = st.selectbox(
-        "Select Claim Reference Number:",
+        "Select Uploaded Claim Reference Number:",
         options = holdout_transactions)
     def predict_if_fraud(transaction_id):
         transaction = X_holdout.loc[transaction_id].values.reshape(1, -1)
@@ -57,7 +57,7 @@ holdout_transactions_existing = X_holdout_existing.index.to_list()
  
 #adding a selectbox
 choice = st.selectbox(
-    "Select Transaction Number:",
+    "Select Claim Reference Number:",
     options = holdout_transactions_existing)
 
 

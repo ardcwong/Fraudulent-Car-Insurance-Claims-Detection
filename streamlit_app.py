@@ -16,12 +16,12 @@ if X_holdout is not None:
     X_holdout = pd.read_csv(X_holdout, index_col=0)  # Assuming the index is in the first column
 
     # Display DataFrame
-    st.write(df)
+    st.write(X_holdout)
 else:
     # Inform the user to upload a file
     st.write("Please upload a CSV file.")
     
-# holdout_transactions = X_holdout.index.to_list()
+holdout_transactions = X_holdout.index.to_list()
 
 st.title("Car Insurance Fraud Detection")
 html_temp = """

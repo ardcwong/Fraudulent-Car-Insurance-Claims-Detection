@@ -9,6 +9,15 @@ import streamlit as st
 
 # read model and holdout data
 model = pickle.load(open('lr.pkl', 'rb'))
+
+st.title("Car Insurance Fraud Detection")
+    html_temp = """
+    <div style="background:#025246 ;padding:10px">
+    <h2 style="color:white;text-align:center;"> Car Insurance Fraud Detection ML App </h2>
+    </div>
+    """
+    st.markdown(html_temp, unsafe_allow_html = True)
+
 #X_holdout = pd.read_csv('holdout.csv', index_col=0)
 X_holdout = st.file_uploader("Upload a CSV file", type=["csv"])
 if X_holdout is not None:
@@ -18,13 +27,7 @@ if X_holdout is not None:
     # Display DataFrame
     st.write(X_holdout)
     holdout_transactions = X_holdout.index.to_list()
-    st.title("Car Insurance Fraud Detection")
-    html_temp = """
-    <div style="background:#025246 ;padding:10px">
-    <h2 style="color:white;text-align:center;"> Car Insurance Fraud Detection ML App </h2>
-    </div>
-    """
-    st.markdown(html_temp, unsafe_allow_html = True)
+    
 
     #adding a selectbox
     choice = st.selectbox(

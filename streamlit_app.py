@@ -18,25 +18,25 @@ if X_holdout is not None:
     # Display DataFrame
     st.write(X_holdout)
     holdout_transactions = X_holdout.index.to_list()
-    
+    st.title("Car Insurance Fraud Detection")
+    html_temp = """
+    <div style="background:#025246 ;padding:10px">
+    <h2 style="color:white;text-align:center;"> Car Insurance Fraud Detection ML App </h2>
+    </div>
+    """
+    st.markdown(html_temp, unsafe_allow_html = True)
+
+    #adding a selectbox
+    choice = st.selectbox(
+        "Select Claim Reference Number:",
+        options = holdout_transactions)
+
 
 else:
     # Inform the user to upload a file
     st.write("Please upload a CSV file.")
 
 
-st.title("Car Insurance Fraud Detection")
-html_temp = """
-<div style="background:#025246 ;padding:10px">
-<h2 style="color:white;text-align:center;"> Car Insurance Fraud Detection ML App </h2>
-</div>
-"""
-st.markdown(html_temp, unsafe_allow_html = True)
-
-#adding a selectbox
-choice = st.selectbox(
-    "Select Claim Reference Number:",
-    options = holdout_transactions)
 
 
 def predict_if_fraud(transaction_id):

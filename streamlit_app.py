@@ -30,8 +30,19 @@ if X_holdout is not None:
     choice = st.selectbox(
         "Select Claim Reference Number:",
         options = holdout_transactions)
-
-
+    def predict_if_fraud(transaction_id):
+        transaction = X_holdout.loc[transaction_id].values.reshape(1, -1)
+        prediction_num = model.predict(transaction)[0]
+        pred_map = {1: 'Fraud', 0: 'Not Fraud'}
+        prediction = pred_map[prediction_num]
+        return prediction
+    if st.button("Predict"):
+        output = predict_if_fraud(choice)
+    
+        if output == 'Fraud':
+            st.error('This transaction may be FRAUDULENT', icon="🚨")
+        elif output == 'Not Fraud':
+            st.success('This transaction is approved!', icon="✅")        
 else:
     # Inform the user to upload a file
     st.write("Please upload a CSV file.")

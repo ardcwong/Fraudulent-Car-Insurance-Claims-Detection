@@ -21,7 +21,7 @@ else:
     # Inform the user to upload a file
     st.write("Please upload a CSV file.")
     
-holdout_transactions = X_holdout.index.to_list()
+# holdout_transactions = X_holdout.index.to_list()
 
 st.title("Car Insurance Fraud Detection")
 html_temp = """

@@ -10,10 +10,10 @@ import streamlit as st
 # read model and holdout data
 model = pickle.load(open('lr.pkl', 'rb'))
 
-st.title("Car Insurance Fraud Detection")
+st.title("")
 html_temp = """
 <div style="background:#025246 ;padding:10px">
-<h2 style="color:white;text-align:center;"> Car Insurance Fraud Detection ML App </h2>
+<h2 style="color:white;text-align:center;"> Car Insurance Fraud Detection App </h2>
 </div>
 """
 st.markdown(html_temp, unsafe_allow_html = True)

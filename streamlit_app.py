@@ -60,9 +60,9 @@ holdout_transactions_existing = X_holdout_existing.index.to_list()
 choice = st.selectbox(
     "Select Claim Reference Number:",
     options = holdout_transactions_existing)
+
 chosen_record = X_holdout_existing.loc[choice]
 true_columns = chosen_record[chosen_record].index
-
 st.write(X_holdout_existing.loc[[choice],true_columns])
 
 def predict_if_fraud_existing(transaction_id):
